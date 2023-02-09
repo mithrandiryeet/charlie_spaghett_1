@@ -1,5 +1,5 @@
 $(function () {
-  console.log("bring the wow");
+  console.log("Oops, a-Spaghett!");
 
   // $("#draggable").draggable();
 
@@ -18,7 +18,6 @@ $(function () {
   });
 
   function updateCounterStatus($event_counter, new_count) {
-    //todo: if more than 174, then wow. if not, no wow.
 
     var game_msg = "";
 
