@@ -1,97 +1,92 @@
-<!-- bravo +> charlie improvements (Web V2.0) html: remove drag counter, change link layout, incorporate BS5 grid, title
-bar css: new background, which doesn't show up. and inconsolata font js/jq: fade in/out function -->
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Will's Charlie Lab</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wiggins Charlie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+    />
 
-        <link rel="stylesheet" href="styles/style.css"/>
-    </head>
-    <!-- https://github.com/mithrandiryeet/charlie_spaghett -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
 
-    <body>
+    <!-- this is my main container for everything on my page -->
+    <div class="container-fluid">
+      <!-- title bar -->
 
-        <!-- main counter for page -->
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
+          <div class="container-fluid">
+            <a class="navbar-brand">Drag Spaghett Around the Screen</a>
+          </div>
 
-            <!-- title -->
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="https://github.com/mithrandiryeet/charlie_spaghett"
+                    target="_blank">My Code</a >
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="https://www.youtube.com/watch?v=Omy3BERUd1g"
+                    target="_blank">Spaghett in Action</a>
+            </li>
+        </ul>
+        </div>
+      </nav>
 
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <div class="container-fluid">
-                    <div class="container-fluid">
-                        <a class="navbar-brand">Spaghett-ification</a>
-                    </div>
+      <!-- game controls  -->
+      <div class="row">
+        <div class="col-md-8 offset-col-2">
+          <button id="resetGame" class="btn btn-secondary">Reset Game</button>
 
-                    <!-- Links -->
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="https://github.com/mithrandiryeet/charlie_spaghett"
-                                target="_blank">My Code</a >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="https://www.youtube.com/watch?v=Omy3BERUd1g"
-                                target="_blank">Spaghett in Action</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+          <!-- <ul class="ui-helper-reset">
+            <li id="event-drag" class="ui-state-default ui-corner-all"></li>
+            <span class="ui-icon ui-icon-arrow-4"></span
+            >&quot;drag&quot; invoked
+            <span class="count">0</span>
+          </ul> -->
 
-            <!-- game controls -->
-            <div class="row">
-                <div class="col-md-8 offset-col-2">
-                    <button id="resetGame" class="btn btn-secondary">Reset Game</button>
+          <div id="gameOutput"></div>
+        </div>
+      </div>
 
-                    <ul class="ui-helper-reset">
-                       <!-- <li id="event-drag" class="ui-state-default ui-corner-all"></li>
-                        <span class="ui-icon ui-icon-arrow-4"></span >&quot;drag&quot; invoked
-                        <span class="count">0</span> -->
-                    </ul>
+      <!-- game space -->
+      <div id="spag-row" class="row">
+        <div class="col-md-6">
+          <div id="draggable" class="ui-widget-content ui-widget">
+            <img
+              alt="spaghett-pic"
+              src="https://s2.dmcdn.net/v/Fxi3x1NL-c514kYZZ/x1080"
+              height="350px"
+            />
+          </div>
+        </div>
+      </div>
 
-                    <div id="gameOutput"></div>
-                </div>
-            </div>
+      <!-- footer -->
+      <!-- <div class="row">
+        <div class="col-md-8">first column</div>
 
-            <!-- game space -->
-            
-            <div>
-                <img
-                    alt="simply meme"
-                    src="https://imgflip.com/s/meme/One-Does-Not-Simply.jpg"
-                    height='350px'>
-                    </div>
-                    <div id="mir" class="row">
-                    <div class="col-md-6">
-                    <div id="draggable" class="ui-widget-content ui-widget">
-                    <img alt="spaghett pic" src="https://s2.dmcdn.net/v/Fxi3x1NL-c514kYZZ/x1080" height="350px" />
+        <div class="col-md-4">second column</div>
+      </div>
+    </div> -->
 
-                    <!-- footer -->
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                          <a
-                              class="nav-link"
-                              href="https://www.w3schools.com/"
-                              target="_blank">W3Schools</a >
-                      </li>
-                      <li class="nav-item">
-                          <a
-                              class="nav-link"
-                              href="https://duckduckgo.com/"
-                              target="_blank">DuckDuckGo</a>
-                      </li>
-                  </ul>
-              </div>
-          </nav>
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
